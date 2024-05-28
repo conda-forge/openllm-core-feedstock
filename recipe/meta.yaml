@@ -1,5 +1,5 @@
 {% set name = "openllm-core" %}
-{% set version = "0.4.44" %}
+{% set version = "0.5.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/openllm_core-{{ version }}.tar.gz
-  sha256: 168970c7c77d452d35a3dc62f6a1348e8d4375128bae3e840c5b93032197f094
+  sha256: d1ab2ea4fb31cbe7aa83a5423385e87ff725bc52d9fe0b4e036a3fd5cfb2ee76
 
 build:
   noarch: python
@@ -23,16 +23,18 @@ requirements:
     - pip
   run:
     - python >=3.8
-    - attrs >=23.1.0
-    - cattrs >=23.1.0,<23.2.0
+    - attrs >=23.2.0
+    - pydantic >2
+    #- cattrs >=23.1.0,<23.2.0
     - orjson
     - inflection
-    - deepmerge
     - typing-extensions
     - mypy_extensions
+    - packaging
+    - deepmerge 
 # Import Failures
-    - packaging >=20.0 # openllm_core/utils/pkg.py", line 9,
-    - click-option-group # openllm_core/_configuration.py", line 13
+    #- packaging >=20.0 # openllm_core/utils/pkg.py", line 9,
+    #- click-option-group # openllm_core/_configuration.py", line 13
 
 test:
   imports:
