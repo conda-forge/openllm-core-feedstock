@@ -1,5 +1,5 @@
 {% set name = "openllm-core" %}
-{% set version = "0.5.2" %}
+{% set version = "0.5.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/openllm_core-{{ version }}.tar.gz
-  sha256: 4ea9c3f3a00a84fdcf5c147f1efb027ecab850bdfa5f355093b94d7cb357e933
+  sha256: 48b731e61216560257d6d038916f81bc6cfb0664c7966b92294f5ef2ba92a652
 
 build:
   noarch: python
